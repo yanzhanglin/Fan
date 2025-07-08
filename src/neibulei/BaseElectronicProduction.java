@@ -2,17 +2,41 @@ package neibulei;
 
 public abstract class BaseElectronicProduction implements ElectronicDevice{
     protected String brand;
-    protected BatteryManager battery;
+    protected Battery battery;
 
     public BaseElectronicProduction(String brand,int initialCharge){
         this.brand = brand;
-        this.battery = new BatteryManager(initialCharge);
+        this.battery = new DeviceBattery(initialCharge);
+    }
+
+    public void setBrand(String brand){
+        this.brand = brand;
+    }
+    @Override
+    public String getBrand(){
+        return this.brand;
+    }
+
+    @Override
+    public void use(int powerConsume){
+        battery.consume(powerConsume);
+    }
+
+    @Override
+    public int getBatteryLevel(){
+        return battery.getBatteryLevel();
+    }
+
+    @Override
+    public Battery getBattery(){
+        return this.battery;
     }
 
 
-    protected class BatteryManager implements Battery{
+
+    protected class DeviceBattery implements Battery{
         protected int batteryLevel;
-        public BatteryManager(int initialCharge){
+        public DeviceBattery(int initialCharge){
             this.batteryLevel = initialCharge;
         }
 

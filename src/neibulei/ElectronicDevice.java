@@ -5,11 +5,17 @@ public interface ElectronicDevice {
     Battery getBattery();
     int getBatteryLevel();
     void use(int powerConsume);
-    String displayInfo();
+
     interface Battery{
         int getBatteryLevel();
         void charge(int amount);
         void consume(int amount);
         boolean isLow();
+    }
+
+    default String displayDeviceInfo(){
+        return String.format("品牌：%s\t剩余电量：%d%%\t电池电量%s",
+        getBrand(),
+        getBatteryLevel(),getBattery().isLow()?"低":"正常");
     }
 }
