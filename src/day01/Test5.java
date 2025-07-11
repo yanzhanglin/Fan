@@ -1,3 +1,4 @@
+package day01;
 import people.*;
 
 public class Test5 {

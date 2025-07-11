@@ -1,6 +1,4 @@
-import day01.*;
-
-
+package day01;
 public class App {
     public static void main(String[] args){
         Demo1 xiaoming = new Demo1();
