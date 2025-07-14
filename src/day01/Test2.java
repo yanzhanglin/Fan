@@ -1,4 +1,4 @@
-import day01.Demo1;
+package day01;
 public class Test2 {
     public static void main(String[] args){
         Demo1 yan = new Demo1();

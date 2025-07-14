@@ -1,4 +1,4 @@
-import day01.*;
+package day01;
 public class test4 {
     public static void main(String[] args){
         Demo4 jack = new Demo4("jack",28,"男","basketball");
